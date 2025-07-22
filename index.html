@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>광명동굴: 미래를 향한 청사진</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flowchart-element::after {
+            content: '→';
+            font-size: 2rem;
+            color: #EB6841;
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .flowchart-element:last-child::after {
+            content: '';
+        }
+         .card-glow {
+            box-shadow: 0 0 15px rgba(235, 104, 65, 0.5), 0 0 5px rgba(235, 104, 65, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+    
+    <header class="bg-gray-900 text-white p-8 text-center sticky top-0 z-50 shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold" style="color: #EDC951;">광명동굴: 미래를 향한 청사진</h1>
+        <p class="mt-2 text-lg text-gray-300">산업 유산에서 문화 창조 공간으로, 데이터로 보는 현재와 미래 전략</p>
+    </header>
+
+    <main class="p-4 md:p-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-3xl font-bold mb-4 text-center" style="color: #CC333F;">광명동굴의 현주소: 기회와 잠재력</h2>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto">
+                    과거 수도권 유일의 금속 광산이었던 광명동굴은 이제 연간 100만 명 이상이 찾는 대한민국의 대표적인 동굴 테마파크로 자리매김했습니다. 현재의 성공을 기반으로, 광명동굴이 세계적인 관광 명소로 도약하기 위한 다음 단계를 모색할 때입니다. 아래 데이터는 광명동굴의 현황을 보여주며, 우리가 나아갈 방향에 대한 중요한 통찰을 제공합니다.
+                </p>
+            </section>
+            
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-bold mb-4 text-center" style="color: #00A0B0;">연간 방문객 추이</h3>
+                <p class="text-center text-gray-600 mb-4 text-sm">코로나19의 영향에도 불구하고 꾸준한 회복세를 보이며, 재도약의 발판을 마련했습니다. 이는 광명동굴 콘텐츠의 기본적인 매력도를 증명합니다.</p>
+                <div class="chart-container h-80 md:h-96">
+                    <canvas id="visitorTrendChart"></canvas>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-bold mb-4 text-center" style="color: #00A0B0;">주요 방문객 유형</h3>
+                 <p class="text-center text-gray-600 mb-4 text-sm">가족 단위 방문객이 가장 높은 비중을 차지하고 있어, 모든 연령대가 즐길 수 있는 콘텐츠의 중요성이 부각됩니다. 커플 및 친구 단위의 젊은 층 유입을 늘릴 잠재력이 있습니다.</p>
+                <div class="chart-container h-80 md:h-96">
+                    <canvas id="visitorTypeChart"></canvas>
+                </div>
+            </div>
+
+            <section class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold mb-4 text-center" style="color: #00A0B0;">현재 체험 프로그램 흐름도</h3>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                    현재 방문객은 정해진 동선을 따라 동굴 내부의 다양한 테마 공간을 순차적으로 관람하는 선형적인 경험을 하게 됩니다. 이는 안정적인 운영에는 유리하지만, 개인화된 경험이나 재방문 유도에는 한계가 있을 수 있습니다.
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-y-8 gap-x-12 relative">
+                    <div class="flowchart-element relative bg-gray-200 p-4 rounded-lg shadow text-center w-40"><strong>매표 및 입장</strong></div>
+                    <div class="flowchart-element relative bg-gray-200 p-4 rounded-lg shadow text-center w-40"><strong>웜홀 광장</strong><br><span class="text-xs">(빛의 공간)</span></div>
+                    <div class="flowchart-element relative bg-gray-200 p-4 rounded-lg shadow text-center w-40"><strong>동굴 예술의 전당</strong><br><span class="text-xs">(미디어 파사드)</span></div>
+                    <div class="flowchart-element relative bg-gray-200 p-4 rounded-lg shadow text-center w-40"><strong>와인 동굴</strong><br><span class="text-xs">(시음 및 판매)</span></div>
+                    <div class="flowchart-element relative bg-gray-200 p-4 rounded-lg shadow text-center w-40"><strong>황금 폭포/궁전</strong><br><span class="text-xs">(포토존)</span></div>
+                    <div class="flowchart-element relative bg-gray-200 p-4 rounded-lg shadow text-center w-40"><strong>근대 역사관</strong><br><span class="text-xs">(광산 역사)</span></div>
+                </div>
+            </section>
+            
+            <section class="md:col-span-2 bg-gray-900 rounded-lg shadow-xl p-8 mt-8">
+                <h2 class="text-3xl font-bold mb-4 text-center" style="color: #EDC951;">성장을 위한 3가지 핵심 제안</h2>
+                <p class="text-center text-gray-300 max-w-3xl mx-auto">
+                    현재의 기반 위에서, 광명동굴을 '한 번 방문하는 곳'에서 '계속해서 다시 찾고 싶은 곳'으로 만들기 위한 세 가지 혁신적인 전략을 제안합니다. 각 제안은 성공적인 해외 사례와 데이터를 기반으로 합니다.
+                </p>
+            </section>
+
+            <div class="bg-white rounded-lg shadow-md p-6 card-glow">
+                <h3 class="text-2xl font-bold mb-2" style="color: #CC333F;">제안 1: 몰입형 미디어 경험 강화</h3>
+                <p class="text-gray-600 mb-4">
+                    단순한 미디어 파사드를 넘어, 동굴의 벽면과 공간 전체를 활용한 인터랙티브 미디어 아트를 도입합니다. 방문객의 움직임에 반응하는 콘텐츠, 스토리가 있는 프로젝션 맵핑 쇼를 통해 '관람'을 '체험'으로 전환합니다.
+                </p>
+                <div class="text-center p-6 rounded-lg mb-4" style="background-color: #fceceb;">
+                    <h4 class="text-lg font-semibold" style="color: #CC333F;">벤치마킹 사례: 캐나다 '포레스타 루미나'</h4>
+                    <p class="text-gray-700 mt-1">숲 전체를 미디어 아트로 탈바꿈시킨 이 프로젝트는 도입 후 방문객 수가 <strong>50% 이상 증가</strong>했으며, 지역 관광의 패러다임을 바꾼 성공 사례로 꼽힙니다.</p>
+                </div>
+                 <div class="chart-container h-80 md:h-96">
+                    <canvas id="satisfactionChart"></canvas>
+                </div>
+                <p class="text-center text-gray-600 mt-4 text-sm">위 그래프는 미디어 경험 강화가 방문객의 만족도와 재방문 의사에 미치는 긍정적인 영향을 예측한 데이터입니다. 특히 '독특한 경험' 항목에서 높은 만족도 상승이 기대됩니다.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md p-6 card-glow">
+                <h3 class="text-2xl font-bold mb-2" style="color: #CC333F;">제안 2: 테마형 시즌 페스티벌 개최</h3>
+                <p class="text-gray-600 mb-4">
+                    '와인 동굴'이라는 강력한 자산을 활용해 '가을 와인 & 재즈 페스티벌'을, 동굴의 서늘함을 이용해 '여름 공포 체험' 등 계절별 특색을 살린 페스티벌을 개최하여 방문 동기를 다각화합니다.
+                </p>
+                <div class="text-center p-6 rounded-lg mb-4" style="background-color: #fceceb;">
+                    <h4 class="text-lg font-semibold" style="color: #CC333F;">벤치마킹 사례: 글로벌 테마파크 시즌 이벤트</h4>
+                    <p class="text-gray-700 mt-1">디즈니랜드의 할로윈, 유니버설 스튜디오의 크리스마스 이벤트 등은 비수기 방문객을 유치하고, 연간 매출의 <strong>20~30%</strong>를 차지하는 핵심적인 수익 모델입니다.</p>
+                </div>
+                 <div class="chart-container h-80 md:h-96">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+                <p class="text-center text-gray-600 mt-4 text-sm">페스티벌 개최 시, 해당 시즌의 매출이 폭발적으로 증가하며 비수기 시즌의 매출을 보완하여 연간 매출의 안정성과 성장을 동시에 이끌 수 있음을 보여줍니다.</p>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-md p-6 card-glow">
+                <h3 class="text-2xl font-bold mb-2" style="color: #CC333F;">제안 3: 증강현실(AR) 교육 트레일 도입</h3>
+                <p class="text-gray-600 mb-4">
+                    스마트폰 앱을 통해 동굴의 특정 지점을 비추면, 눈앞에 가상의 광물이 나타나고, 1970년대 광부들의 모습이 재현되는 등 교육적 정보와 재미를 결합한 AR 콘텐츠를 제공합니다. 이는 특히 가족 단위 방문객에게 큰 호응을 얻을 것입니다.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="text-center p-6 rounded-lg" style="background-color: #fceceb;">
+                        <h4 class="text-lg font-semibold" style="color: #CC333F;">벤치마킹 사례: 이탈리아 폼페이 AR 투어</h4>
+                        <p class="text-gray-700 mt-1">AR을 통해 고대 도시의 모습을 생생하게 복원한 폼페이 투어는 방문객 만족도를 크게 높였으며, 연구에 따르면 AR 활용 시 학습 정보 잔존율이 <strong>최대 40%까지 향상</strong>될 수 있습니다.</p>
+                        <div class="mt-4 text-5xl flex justify-center items-center gap-6">
+                             <div>
+                                <span class="text-gray-500">📖</span>
+                                <p class="text-base font-semibold">일반 관람</p>
+                             </div>
+                             <span class="text-3xl font-bold" style="color: #CC333F;">→</span>
+                             <div>
+                                <span class="text-yellow-500">📱✨</span>
+                                <p class="text-base font-semibold">AR 관람</p>
+                             </div>
+                        </div>
+                         <p class="text-sm mt-2 font-bold" style="color: #CC333F;">학습 효과 40% UP</p>
+                    </div>
+                    <div>
+                         <div class="chart-container h-80 md:h-96">
+                            <canvas id="engagementChart"></canvas>
+                        </div>
+                        <p class="text-center text-gray-600 mt-4 text-sm">AR 트레일 도입은 단순 관람 시간을 '상호작용 시간'으로 전환시켜, 전체 체류 시간을 늘리고 경험의 질을 획기적으로 개선할 수 있음을 보여줍니다.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+    <footer class="text-center p-6 mt-8 bg-gray-900 text-gray-400">
+        <p>Gwangmyeong Cave Infographic. All data is illustrative and based on market research for proposal purposes.</p>
+        <p class="text-xs mt-2">Crafted for a dynamic and engaging data presentation.</p>
+    </footer>
+
+    <script>
+        const vibrantPalette = {
+            blue: '#00A0B0',
+            brown: '#6A4A3C',
+            red: '#CC333F',
+            orange: '#EB6841',
+            yellow: '#EDC951'
+        };
+
+        const chartTooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            }
+            return label;
+        };
+        
+        const wrapLabel = (label, maxLength = 16) => {
+            if (label.length <= maxLength) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            words.forEach(word => {
+                if ((currentLine + word).length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = '';
+                }
+                currentLine += word + ' ';
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        };
+
+        new Chart(document.getElementById('visitorTrendChart'), {
+            type: 'line',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023', '2024 (예상)'],
+                datasets: [{
+                    label: '연간 방문객 (만 명)',
+                    data: [120, 45, 60, 95, 110, 130],
+                    borderColor: vibrantPalette.orange,
+                    backgroundColor: 'rgba(235, 104, 65, 0.2)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '만';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: chartTooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('visitorTypeChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['가족 단위', '커플/친구', '단체/기관', '외국인', '기타'],
+                datasets: [{
+                    label: '방문객 유형',
+                    data: [55, 25, 12, 5, 3],
+                    backgroundColor: [
+                        vibrantPalette.blue,
+                        vibrantPalette.orange,
+                        vibrantPalette.yellow,
+                        vibrantPalette.red,
+                        '#a0a0a0'
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                 plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: chartTooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('satisfactionChart'), {
+            type: 'bar',
+            data: {
+                labels: ['전반적 만족도', '재방문 의사', wrapLabel('독특하고 새로운 경험')],
+                datasets: [{
+                    label: '기존 경험',
+                    data: [75, 60, 50],
+                    backgroundColor: 'rgba(0, 160, 176, 0.6)',
+                    borderColor: vibrantPalette.blue,
+                    borderWidth: 1
+                }, {
+                    label: '미디어 경험 강화 후 (예상)',
+                    data: [90, 85, 95],
+                    backgroundColor: 'rgba(235, 104, 65, 0.8)',
+                    borderColor: vibrantPalette.orange,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                         ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                },
+                 plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: chartTooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+        
+        new Chart(document.getElementById('revenueChart'), {
+            type: 'bar',
+            data: {
+                labels: ['1분기(비수기)', '2분기(봄)', '3분기(여름)', '4분기(가을 페스티벌)'],
+                datasets: [{
+                    label: '분기별 예상 매출 (억원)',
+                    data: [10, 15, 18, 35],
+                    backgroundColor: [
+                        vibrantPalette.blue,
+                        vibrantPalette.yellow,
+                        vibrantPalette.orange,
+                        vibrantPalette.red,
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: chartTooltipTitleCallback
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                             callback: function(value) {
+                                return value + '억';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('engagementChart'), {
+            type: 'bar',
+            data: {
+                labels: ['기존 경험', 'AR 트레일 도입 후'],
+                datasets: [{
+                    label: '단순 관람 시간(분)',
+                    data: [45, 25],
+                    backgroundColor: vibrantPalette.blue,
+                }, {
+                    label: '상호작용/체험 시간(분)',
+                    data: [15, 45],
+                    backgroundColor: vibrantPalette.red,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true,
+                        beginAtZero: true,
+                        ticks: {
+                             callback: function(value) {
+                                return value + '분';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                     tooltip: {
+                        callbacks: {
+                            title: chartTooltipTitleCallback
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

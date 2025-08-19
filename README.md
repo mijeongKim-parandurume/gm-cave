@@ -3,7 +3,7 @@
 제미나이와 함께하는 웹페이지 기획 및 콘텐츠 제작
 이 튜토리얼의 첫 번째 목표는 **제미나이(Gemini)**라는 똑똑한 AI 비서를 활용하여 웹페이지 제작의 밑그림을 그리는 것입니다. 여러분이 직접 자료를 찾고 디자인을 고민할 필요 없이, 제미나이가 모든 과정을 도와줄 거예요.
 
-참고 영상: https://www.youtube.com/watch?v=389GZE5801M
+[![참고 영상 바로보기](https://img.youtube.com/vi/qWZua_tWDMQ/0.jpg)](https://youtu.be/qWZua_tWDMQ)
 
 **1단계: 제미나이 접속 및 주제 정의**
 
